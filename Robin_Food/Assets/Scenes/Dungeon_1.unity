@@ -232,8 +232,8 @@ GameObject:
   m_Component:
   - component: {fileID: 277823131}
   - component: {fileID: 277823130}
-  - component: {fileID: 277823129}
   - component: {fileID: 277823128}
+  - component: {fileID: 277823129}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -267,8 +267,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
---- !u!61 &277823129
-BoxCollider2D:
+--- !u!70 &277823129
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -280,19 +280,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000007450581, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.35}
-    newSize: {x: 0.64, y: 0.35}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.33288085, y: 0.35}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: -0.2}
+  m_Size: {x: 0.64, y: 0.35}
+  m_Direction: 0
 --- !u!212 &277823130
 SpriteRenderer:
   m_ObjectHideFlags: 0

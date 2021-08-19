@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collidable : MonoBehaviour
 {
-    private BoxCollider2D boxCollider;
+    private CapsuleCollider2D boxCollider;
     // Filtro per sapere con cosa devo collidere
     public ContactFilter2D filter;
     // Contiene tutti gli oggetti con cui ho colliso durante il frame
@@ -13,7 +13,7 @@ public class Collidable : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame

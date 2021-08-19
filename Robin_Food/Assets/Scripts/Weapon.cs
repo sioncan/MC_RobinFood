@@ -5,8 +5,8 @@ using UnityEngine;
 public class Weapon : Collidable
 {
     // damage struct
-    public int damagePoint = 1;
-    public float pushForce = 4.0f;
+    public int[] damagePoint = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,15};
+    public float[] pushForce = { 2.0f, 2.2f, 2.4f, 2.6f, 2.8f, 3.0f, 3.2f, 3.4f, 3.6f, 3.8f, 4.0f};
     // swing
     private Animator animator;
     private float cooldown = 0.5f;
@@ -14,6 +14,11 @@ public class Weapon : Collidable
     // upgrade
     public int weaponLevel;
     private SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     // Start is called before the first frame update
     protected override void Start()
@@ -53,12 +58,24 @@ public class Weapon : Collidable
             // creiamo un oggetto Damage, e lo mandiamo all'npc colpito
             Damage dmg = new Damage
             {
-                damageAmount = damagePoint,
+                damageAmount = damagePoint[weaponLevel],
                 origin = transform.position,
-                pushForce = pushForce
+                pushForce = pushForce[weaponLevel]
             };
 
             coll.SendMessage("ReceiveDamage", dmg);
         }
+    }
+    // fa salire l'arma di livello, quindi cambia le stats e lo sprite (anche nel menu)
+    public void UpgradeWeapon()
+    {
+        weaponLevel++;
+        spriteRenderer.sprite = GameManager.gameManagerIstance.weaponSprites[weaponLevel];
+    }
+
+    public void SetWeaponLevel(int level)
+    {
+        weaponLevel = level;
+        spriteRenderer.sprite = GameManager.gameManagerIstance.weaponSprites[weaponLevel];
     }
 }

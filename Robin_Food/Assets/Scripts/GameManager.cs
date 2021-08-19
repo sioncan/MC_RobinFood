@@ -15,10 +15,11 @@ public class GameManager : MonoBehaviour
 
     // references
     public Player player;
+    public Weapon weapon;
     public FloatingTextManager floatingTextManager;
 
     // logic
-    public int money;
+    public int coins;
     public int experience;
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
@@ -40,6 +41,23 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    // potenzia l'arma
+    public bool TryUpgradeWeapon()
+    {
+        // controllo se abbiamo l'arma finale (livello max)
+        if (weaponPrices.Count <= weapon.weaponLevel)
+            return false;
+
+        if(coins >= weaponPrices[weapon.weaponLevel])
+        {
+            coins -= weaponPrices[weapon.weaponLevel];
+            weapon.UpgradeWeapon();
+            return true;
+        }
+
+        return false;
+    }
+
     // salva lo stato del gioco
     /*
      * 0 int playerSkin
@@ -51,9 +69,9 @@ public class GameManager : MonoBehaviour
     {
         string saving = "";
         saving += "0" + "|";
-        saving += money.ToString() + "|";
+        saving += coins.ToString() + "|";
         saving += experience.ToString() + "|";
-        saving += "0";
+        saving += weapon.weaponLevel.ToString();
 
         PlayerPrefs.SetString("SaveState", saving);
     }
@@ -66,8 +84,9 @@ public class GameManager : MonoBehaviour
             return;
 
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
-        money = int.Parse(data[1]);
+        coins = int.Parse(data[1]);
         experience = int.Parse(data[2]);
+        weapon.SetWeaponLevel(int.Parse(data[3]));
     }
         
 

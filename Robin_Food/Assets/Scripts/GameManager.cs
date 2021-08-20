@@ -58,6 +58,48 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    // xp/levelling system
+    public int GetCurrentLevel()
+    {
+        int result = 0;
+        int add = 0;
+
+        while(experience >= add)
+        {
+            add += xpTable[result];
+            result++;
+            if (result == xpTable.Count) // controllo se sono max level
+                return result;
+        }
+        return result;
+    }
+
+    public int GetXpToLevel(int level)
+    {
+        int result = 0;
+        int xp = 0;
+
+        while(result < level)
+        {
+            xp += xpTable[result];
+            result++;
+        }
+        return xp;
+    }
+
+    public void GrantXp(int xp)
+    {
+        int currLevel = GetCurrentLevel();
+        experience += xp;
+        if (currLevel < GetCurrentLevel()) // se siamo saliti di livello
+            OnLevelUp();
+    }
+
+    public void OnLevelUp()
+    {
+        player.OnLevelUp();
+    }
+
     // salva lo stato del gioco
     /*
      * 0 int playerSkin
@@ -86,6 +128,8 @@ public class GameManager : MonoBehaviour
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
         coins = int.Parse(data[1]);
         experience = int.Parse(data[2]);
+        if(GetCurrentLevel() != 1)
+            player.SetLevel(GetCurrentLevel());
         weapon.SetWeaponLevel(int.Parse(data[3]));
     }
         

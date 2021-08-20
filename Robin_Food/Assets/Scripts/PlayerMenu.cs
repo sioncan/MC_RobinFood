@@ -39,6 +39,7 @@ public class PlayerMenu : MonoBehaviour
     private void OnSelectedChange()
     {
         skinSelectionSprite.sprite = GameManager.gameManagerIstance.playerSprites[currentSkinSelection];
+        GameManager.gameManagerIstance.player.SwapSprite(currentSkinSelection);
     }
 
     // upgrade arma, se l'upgrade è avvenuto con successo, allora aggiorno l'immagine nel menu
@@ -54,12 +55,32 @@ public class PlayerMenu : MonoBehaviour
     public void UpdateMenu()
     {
         weaponSprite.sprite = GameManager.gameManagerIstance.weaponSprites[GameManager.gameManagerIstance.weapon.weaponLevel];
-        upgradeCostText.text = "";
-        levelText.text = "";
+        // upgrade weapon cost
+        if(GameManager.gameManagerIstance.weapon.weaponLevel == GameManager.gameManagerIstance.weaponPrices.Count)
+            upgradeCostText.text = "Max";
+        else
+            upgradeCostText.text = GameManager.gameManagerIstance.weaponPrices[GameManager.gameManagerIstance.weapon.weaponLevel].ToString();
+        
+        levelText.text = GameManager.gameManagerIstance.GetCurrentLevel().ToString();
         hitpointText.text = GameManager.gameManagerIstance.player.hitpoint.ToString();
         coinsText.text = GameManager.gameManagerIstance.coins.ToString();
-        xpText.text = "";
-        xpBar.localScale = new Vector3(0.5f, 0, 0);
+        // xp bar
+        int currentLevel = GameManager.gameManagerIstance.GetCurrentLevel();
+        if (currentLevel == GameManager.gameManagerIstance.xpTable.Count) // se sono max level
+        {
+            xpText.text = GameManager.gameManagerIstance.experience.ToString() + " total xp points"; // mostra xp tot
+            xpBar.localScale = Vector3.one; // riempie tutta la barra dell'xp
+        }
+        else
+        {
+            int prevLevelXp = GameManager.gameManagerIstance.GetXpToLevel(currentLevel - 1);
+            int currLevelXp = GameManager.gameManagerIstance.GetXpToLevel(currentLevel);
+            int diff = currLevelXp - prevLevelXp; // xp necessaria per salire di livello
+            int currXpIntoLevel = GameManager.gameManagerIstance.experience - prevLevelXp; // xp fatta nel livello attuale
+            float completionRatio = (float)currXpIntoLevel / (float)diff; // % di xp fatta nel livello attuale->prossimo
+            xpBar.localScale = new Vector3(completionRatio, 1, 1);
+            xpText.text = currXpIntoLevel.ToString() + " / " + diff;
+        }
     }
 
     // Start is called before the first frame update

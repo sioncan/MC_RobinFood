@@ -10,6 +10,7 @@ public class Player : Mover
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        DontDestroyOnLoad(gameObject);
     }
 
     private void FixedUpdate()
@@ -38,5 +39,15 @@ public class Player : Mover
         {
             OnLevelUp();
         }
+    }
+
+    public void Heal(int healingAmount)
+    {
+        if (hitpoint == max_hitpoint) // se ok player ha vita max, non viene curato
+            return;
+        hitpoint += healingAmount;
+        if(hitpoint > max_hitpoint)
+            hitpoint = max_hitpoint;
+        GameManager.gameManagerIstance.ShowText("+ " + healingAmount.ToString() + "hp", 20, Color.green, transform.position, Vector3.up * 30, 1.0f);
     }
 }

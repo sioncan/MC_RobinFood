@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMotor : MonoBehaviour
 {
 
-    public Transform lookAt;
+    private Transform lookAt;
     // Offset spostamento player prima che la camera si sposta per inseguirlo
     public float boundX;
     public float boundY;
@@ -13,7 +13,7 @@ public class CameraMotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        lookAt = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame

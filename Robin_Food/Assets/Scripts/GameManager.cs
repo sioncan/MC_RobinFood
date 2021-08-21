@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
+    public RectTransform hitpointBar;
+    public GameObject hud;
+    public GameObject menu;
 
     // logic
     public int coins;
@@ -34,13 +37,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             Destroy(player.gameObject);
             Destroy(floatingTextManager.gameObject);
+            Destroy(hud);
+            Destroy(menu);
             return;
         }
         gameManagerIstance = this;
 
         // ogni volta che carico una scena, il game manager esegue tutte le funzioni che ho aggiunto
         SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     // potenzia l'arma
@@ -100,6 +105,14 @@ public class GameManager : MonoBehaviour
     public void OnLevelUp()
     {
         player.OnLevelUp();
+        OnHitpointChange();
+    }
+
+    // Health/hipoint bar
+    public void OnHitpointChange()
+    {
+        float ratio = (float)player.hitpoint / (float)player.maxHitpoint;
+        hitpointBar.localScale = new Vector3(ratio, 1, 1);
     }
 
     // salva lo stato del gioco
@@ -122,7 +135,8 @@ public class GameManager : MonoBehaviour
 
     // carica il gioco salvato
     public void LoadState(Scene s, LoadSceneMode mode)
-    {   
+    {
+        SceneManager.sceneLoaded -= LoadState;
         // se non ho salvato, non carico il salvaggio (che non esiste)
         if (!PlayerPrefs.HasKey("SaveState"))
             return;
@@ -133,10 +147,12 @@ public class GameManager : MonoBehaviour
         if(GetCurrentLevel() != 1)
             player.SetLevel(GetCurrentLevel());
         weapon.SetWeaponLevel(int.Parse(data[3]));
+    }    
 
+    public void OnSceneLoaded(Scene s, LoadSceneMode mode)
+    {
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
-        
 
     // Start is called before the first frame update
     void Start()

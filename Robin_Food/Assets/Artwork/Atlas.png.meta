@@ -220,7 +220,7 @@ TextureImporter:
     second: enemy_0
   - first:
       213: 703316215228858992
-    second: menu_0
+    second: Menu_red_button
   - first:
       213: -5206644523654691916
     second: Player_6
@@ -248,6 +248,9 @@ TextureImporter:
   - first:
       213: 2526274175933715322
     second: Coin_3
+  - first:
+      213: 2495676471409746333
+    second: Menu_blue_button
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1873,7 +1876,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu_0
+      name: Menu_red_button
       rect:
         serializedVersion: 2
         x: 16
@@ -2078,6 +2081,27 @@ TextureImporter:
       bones: []
       spriteID: a7395cd6af02f0320800000000000000
       internalID: 2526274175933715322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu_blue_button
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91ada0378c62a220800000000000000
+      internalID: 2495676471409746333
       vertices: []
       indices: 
       edges: []

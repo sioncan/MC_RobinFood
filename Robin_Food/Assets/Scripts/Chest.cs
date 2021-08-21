@@ -19,7 +19,5 @@ public class Chest : Collectable
             GameManager.gameManagerIstance.coins += coinsAmount;
             GameManager.gameManagerIstance.ShowText("+" + coinsAmount + " coins!", 20, Color.yellow, transform.position, Vector3.up * 25, 1.5f);
         }
-        
-
     }
 }

@@ -41,12 +41,6 @@ public class FloatingTextManager : MonoBehaviour
         return text;
     }
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     // Update is called once per frame
     void Update()
     {

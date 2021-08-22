@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public RectTransform hitpointBar;
     public GameObject hud;
     public GameObject menu;
+    public Animator deathMenuAnim;
 
     // logic
     public int coins;

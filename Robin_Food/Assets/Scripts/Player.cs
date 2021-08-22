@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : Mover
 {
+    private bool isAlive = true;
     private SpriteRenderer spriteRenderer;
 
     protected override void Start()
@@ -17,14 +18,19 @@ public class Player : Mover
         base.ReceiveDamage(dmg);
         GameManager.gameManagerIstance.OnHitpointChange();
     }
+    protected override void Death()
+    {
+        isAlive = false;
+        GameManager.gameManagerIstance.deathMenuAnim.SetTrigger("Show");
+    }
 
     private void FixedUpdate()
     {
         // Prendo gli input WASD e li metto nel vettore moveDelta
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-
-        UpdateMotor(new Vector3(x, y, 0));  
+        if(isAlive)
+            UpdateMotor(new Vector3(x, y, 0));  
     }
 
     public void SwapSprite(int skindId)

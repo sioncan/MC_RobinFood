@@ -153,16 +153,4 @@ public class GameManager : MonoBehaviour
     {
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

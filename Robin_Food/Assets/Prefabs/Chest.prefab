@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4612187348471216727}
   - component: {fileID: 4612187348471216726}
-  - component: {fileID: 4612187348471217576}
   - component: {fileID: 1532126894}
+  - component: {fileID: 4612187348471217576}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -84,6 +84,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &1532126894
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612187348471216724}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0013193786, y: -0.017151937}
+  m_Size: {x: 0.19166511, y: 0.19166511}
+  m_Direction: 0
 --- !u!114 &4612187348471217576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,20 +127,4 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   EmptyChest: {fileID: -9052792337493064725, guid: 6d68d562aba69de4cbcb241db49f5133, type: 3}
-  coinsAmount: 0
---- !u!70 &1532126894
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4612187348471216724}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0013193786, y: -0.017151937}
-  m_Size: {x: 0.19166511, y: 0.19166511}
-  m_Direction: 0
+  coinsAmount: 5

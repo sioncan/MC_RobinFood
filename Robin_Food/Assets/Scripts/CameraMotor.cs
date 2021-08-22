@@ -16,12 +16,6 @@ public class CameraMotor : MonoBehaviour
         lookAt = GameObject.Find("Player").transform;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // LateUpdate is once per frame after Update and FixedUpdate
     public void LateUpdate()
     {

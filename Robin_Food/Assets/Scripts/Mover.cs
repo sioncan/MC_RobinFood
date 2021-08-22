@@ -7,8 +7,8 @@ public abstract class Mover : Fighter
     protected CapsuleCollider2D boxCollider;
     protected Vector3 moveDelta;
     protected RaycastHit2D hit;
-    protected float xspeed = 1.0f;
-    protected float yspeed = 0.75f;
+    public float xspeed = 1.0f;
+    public float yspeed = 0.75f;
 
     // Start is called before the first frame update
     protected virtual void Start()

@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class FloatingText
 {
-    public bool activated;
+    public bool active;
     public GameObject go;
-    public Text text;
+    public Text txt;
     public Vector3 motion;
     public float duration;
     public float lastShown;
@@ -13,21 +13,21 @@ public class FloatingText
     // mostra il testo
     public void Show()
     {
-        activated = true;
+        active = true;
         lastShown = Time.time;
-        go.SetActive(activated);
+        go.SetActive(active);
     }
 
     // nasconde il testo (non lo distrugge)
     public void Hide()
     {
-        activated = false;
-        go.SetActive(activated);
+        active = false;
+        go.SetActive(active);
     }
 
     public void UpdateFloatingText()
     {
-        if (!activated)
+        if (!active)
             return;
         if (Time.time - lastShown > duration)
             Hide();

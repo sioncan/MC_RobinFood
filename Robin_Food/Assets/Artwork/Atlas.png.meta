@@ -251,6 +251,12 @@ TextureImporter:
   - first:
       213: 2495676471409746333
     second: Menu_blue_button
+  - first:
+      213: -8316447183620893927
+    second: boss_0
+  - first:
+      213: -7013733424125015739
+    second: boss_0_companion
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2102,6 +2108,48 @@ TextureImporter:
       bones: []
       spriteID: d91ada0378c62a220800000000000000
       internalID: 2495676471409746333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 112
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9139af2595b069c80800000000000000
+      internalID: -8316447183620893927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_0_companion
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 446
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5498eb17c963aae90800000000000000
+      internalID: -7013733424125015739
       vertices: []
       indices: 
       edges: []

@@ -15,6 +15,8 @@ public class Player : Mover
 
     protected override void ReceiveDamage(Damage dmg)
     {
+        if (!isAlive)
+            return;
         base.ReceiveDamage(dmg);
         GameManager.gameManagerIstance.OnHitpointChange();
     }
@@ -61,5 +63,13 @@ public class Player : Mover
             hitpoint = maxHitpoint;
         GameManager.gameManagerIstance.ShowText("+ " + healingAmount.ToString() + "hp", 20, Color.green, transform.position, Vector3.up * 30, 1.0f);
         GameManager.gameManagerIstance.OnHitpointChange();
+    }
+
+    public void Respawn()
+    {
+        Heal(maxHitpoint);
+        isAlive = true;
+        lastImmune = Time.time;
+        pushDirection = Vector3.zero;
     }
 }

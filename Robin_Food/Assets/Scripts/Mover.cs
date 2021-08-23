@@ -9,10 +9,12 @@ public abstract class Mover : Fighter
     protected RaycastHit2D hit;
     public float xspeed = 1.0f;
     public float yspeed = 0.75f;
+    private Vector3 originalSize;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        originalSize = transform.localScale; 
         boxCollider = GetComponent<CapsuleCollider2D>();
     }
 
@@ -22,9 +24,9 @@ public abstract class Mover : Fighter
 
         // Giro il Player in base alla direzione in cui vado
         if (moveDelta.x > 0)
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = originalSize;
         else if (moveDelta.x < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(originalSize.x * -1, originalSize.y, originalSize.z);
 
         // aggiunge la pushForce come vettore
         moveDelta += pushDirection;

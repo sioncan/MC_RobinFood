@@ -116,6 +116,14 @@ public class GameManager : MonoBehaviour
         hitpointBar.localScale = new Vector3(ratio, 1, 1);
     }
 
+    // Death menu respawn
+    public void Respawn()
+    {
+        deathMenuAnim.SetTrigger("Hide");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        player.Respawn();
+    }
+
     // salva lo stato del gioco
     /*
      * 0 int playerSkin

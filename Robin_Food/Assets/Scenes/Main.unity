@@ -854,6 +854,7 @@ GameObject:
   - component: {fileID: 220708091}
   - component: {fileID: 220708090}
   - component: {fileID: 220708092}
+  - component: {fileID: 220708093}
   m_Layer: 8
   m_Name: Collision
   m_TagString: Untagged
@@ -1961,6 +1962,27 @@ TilemapCollider2D:
   m_Offset: {x: 0.1, y: 0.1}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!50 &220708093
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220708088}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &245491249
 GameObject:
   m_ObjectHideFlags: 0
@@ -8325,7 +8347,6 @@ GameObject:
   - component: {fileID: 746628804}
   - component: {fileID: 746628803}
   - component: {fileID: 746628806}
-  - component: {fileID: 746628807}
   m_Layer: 0
   m_Name: IntroNpc
   m_TagString: Untagged
@@ -8441,27 +8462,6 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   msg: Welcome, fuck off !
---- !u!50 &746628807
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746628802}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &766346838
 GameObject:
   m_ObjectHideFlags: 0
@@ -17993,7 +17993,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7998969366990307711, guid: 084a89d0b8a5be145ad98e3288b60c08, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 084a89d0b8a5be145ad98e3288b60c08, type: 3}
 --- !u!1 &7998969367626145774 stripped
 GameObject:
@@ -18012,6 +18013,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96bf11cd191deb40b97d6b6413919f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &7998969367626145776
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7998969367626145774}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1001 &8886961116084842580
 PrefabInstance:
   m_ObjectHideFlags: 0

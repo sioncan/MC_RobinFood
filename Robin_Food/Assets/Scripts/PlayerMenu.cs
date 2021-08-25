@@ -59,7 +59,7 @@ public class PlayerMenu : MonoBehaviour
         if(GameManager.gameManagerIstance.weapon.weaponLevel == GameManager.gameManagerIstance.weaponPrices.Count)
             upgradeCostText.text = "Max";
         else
-            upgradeCostText.text = GameManager.gameManagerIstance.weaponPrices[GameManager.gameManagerIstance.weapon.weaponLevel].ToString();
+            upgradeCostText.text = GameManager.gameManagerIstance.weaponPrices[GameManager.gameManagerIstance.weapon.weaponLevel].ToString() + "C";
         
         levelText.text = GameManager.gameManagerIstance.GetCurrentLevel().ToString();
         hitpointText.text = GameManager.gameManagerIstance.player.hitpoint.ToString();
@@ -79,7 +79,7 @@ public class PlayerMenu : MonoBehaviour
             int currXpIntoLevel = GameManager.gameManagerIstance.experience - prevLevelXp; // xp fatta nel livello attuale
             float completionRatio = (float)currXpIntoLevel / (float)diff; // % di xp fatta nel livello attuale->prossimo
             xpBar.localScale = new Vector3(completionRatio, 1, 1);
-            xpText.text = currXpIntoLevel.ToString() + " / " + diff;
+            xpText.text = currXpIntoLevel.ToString() + " / " + diff + " exp.";
         }
     }
 }

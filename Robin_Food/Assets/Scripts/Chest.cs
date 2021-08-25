@@ -7,7 +7,7 @@ public class Chest : Collectable
     // sprite chest vuota da sostuituire una volta perta
     public Sprite EmptyChest;
     // qanti coins sono nella chest
-    public int coinsAmount = 5;
+    public int coinsAmount;
 
     protected override void OnCollect()
     {

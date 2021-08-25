@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\PortalHome.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\NpcText.cs" />
+    <Compile Include="Assets\Scripts\Boss_0.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\Crate.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Assets\Scripts\FloatingText.cs" />
     <Compile Include="Assets\Scripts\Collectable.cs" />
     <Compile Include="Assets\Scripts\EnemyHitbox.cs" />
+    <Compile Include="Assets\Scripts\Boss_1.cs" />
     <Compile Include="Assets\Scripts\Chest.cs" />
     <Compile Include="Assets\Scripts\Fighter.cs" />
     <Compile Include="Assets\Scripts\FloatingTextManager.cs" />
@@ -74,7 +76,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Collidable.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
-    <Compile Include="Assets\Scripts\Boss.cs" />
+    <Compile Include="Assets\Scripts\Boss_2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

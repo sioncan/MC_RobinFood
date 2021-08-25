@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : Mover
 {
+    public bool isAlive;
     public int xpValue = 1;
     public float triggerLength = 0.3f;
     public float chaseLength = 1.0f;
@@ -19,6 +20,7 @@ public class Enemy : Mover
     protected override void Start()
     {
         base.Start();
+        isAlive = true;
         playerTransform = GameManager.gameManagerIstance.player.transform;
         startingPosition = transform.position;
         hitbox = transform.GetChild(0).GetComponent<CapsuleCollider2D>();
@@ -69,6 +71,7 @@ public class Enemy : Mover
 
     protected override void Death()
     {
+        isAlive = false;
         Destroy(gameObject);
         GameManager.gameManagerIstance.GrantXp(xpValue);
     }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5479162382238425411}
   - component: {fileID: 5479162382238425410}
   - component: {fileID: 5479162382238425409}
+  - component: {fileID: -7213898622634027970}
   m_Layer: 0
   m_Name: Enemy_4
   m_TagString: Fighter
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 582128235
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 310630301815266069, guid: 6d68d562aba69de4cbcb241db49f5133, type: 3}
+  m_Sprite: {fileID: 929331474428757357, guid: 6d68d562aba69de4cbcb241db49f5133, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,8 +121,8 @@ MonoBehaviour:
   yspeed: 0.75
   isAlive: 0
   xpValue: 1
-  triggerLength: 1
-  chaseLength: 5
+  triggerLength: 1000
+  chaseLength: 1000
   filter:
     useTriggers: 0
     useLayerMask: 0
@@ -136,6 +137,27 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+--- !u!50 &-7213898622634027970
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479162382238425408}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &5479162383422404533
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,4 +233,4 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   damage: 1
-  pushForce: 3
+  pushForce: 0

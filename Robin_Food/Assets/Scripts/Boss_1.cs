@@ -42,6 +42,7 @@ public class Boss_1 : Enemy
                 companions[1] = Instantiate(companionPrefab, new Vector3(transform.position.x - 0.1f, transform.position.y, 0), Quaternion.identity);
                 companions[2] = Instantiate(companionPrefab, new Vector3(transform.position.x, transform.position.y + 0.1f, 0), Quaternion.identity);
                 companions[3] = Instantiate(companionPrefab, new Vector3(transform.position.x, transform.position.y - 0.1f, 0), Quaternion.identity);
+                GameObject.Find("Player").transform.Translate(Vector3.zero);
                 lastAttack = Time.time;
             }
         }

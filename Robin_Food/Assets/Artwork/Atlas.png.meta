@@ -317,6 +317,12 @@ TextureImporter:
   - first:
       213: 2797862723735380732
     second: Pillar_intero_floor
+  - first:
+      213: 8121168628305159327
+    second: chest_diamond_open
+  - first:
+      213: -6848902357601259404
+    second: chest_mouth_open
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2622,7 +2628,7 @@ TextureImporter:
         width: 16
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2630,6 +2636,48 @@ TextureImporter:
       bones: []
       spriteID: cf2ed82d25104d620800000000000000
       internalID: 2797862723735380732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chest_diamond_open
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94ec23f6df24b070800000000000000
+      internalID: 8121168628305159327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chest_mouth_open
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47077d1c79fc3f0a0800000000000000
+      internalID: -6848902357601259404
       vertices: []
       indices: 
       edges: []

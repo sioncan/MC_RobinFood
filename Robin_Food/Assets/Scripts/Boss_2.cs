@@ -13,7 +13,7 @@ public class Boss_2 : Enemy
     // Update is called once per frame
     private void Update()
     {   // crea una copia di se stesso ogni cooldown solo se è vivo e se non ma vita max (dal momento in cui viene colpito)
-        if (isAlive && Time.time - lastDuplicate > duplicateCooldown && hitpoint < maxHitpoint && duplicateNum < duplicateMaxNum)
+        if (isAlive && Time.time - lastDuplicate > duplicateCooldown && hitpoint < maxHitpoint && duplicateNum < duplicateMaxNum && GameManager.isPaused == false)
         {
             // ogni cooldown duplico il boss
             Instantiate(duplicatePrefab, new Vector3(transform.position.x + 0.5f, transform.position.y, 0), Quaternion.identity);

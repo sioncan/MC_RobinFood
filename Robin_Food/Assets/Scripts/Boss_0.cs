@@ -11,9 +11,12 @@ public class Boss_0 : Enemy
     // Update is called once per frame
     private void Update()
     {
-        for (int i = 0; i < companions.Length; i++)
+        if (GameManager.isPaused == false)
         {
-            companions[i].position = transform.position + new Vector3(-Mathf.Cos(Time.time * compSpeed[i]) * compDistance, Mathf.Sin(Time.time * compSpeed[i]) * compDistance, 0);
+            for (int i = 0; i < companions.Length; i++)
+            {
+                companions[i].position = transform.position + new Vector3(-Mathf.Cos(Time.time * compSpeed[i]) * compDistance, Mathf.Sin(Time.time * compSpeed[i]) * compDistance, 0);
+            }
         }
     }
 }

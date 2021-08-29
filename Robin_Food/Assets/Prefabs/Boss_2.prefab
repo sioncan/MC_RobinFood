@@ -87,9 +87,9 @@ GameObject:
   - component: {fileID: 5477964083214520443}
   - component: {fileID: 5477964083214520442}
   - component: {fileID: 5477964083214520445}
+  - component: {fileID: -4873862130183663243}
   - component: {fileID: 5477964083214520444}
   - component: {fileID: 5477964083214520440}
-  - component: {fileID: -4873862130183663243}
   m_Layer: 0
   m_Name: Boss_2
   m_TagString: Fighter
@@ -179,6 +179,27 @@ CapsuleCollider2D:
   m_Offset: {x: -0.008820772, y: -0.007718116}
   m_Size: {x: 0.22281885, y: 0.3022052}
   m_Direction: 0
+--- !u!50 &-4873862130183663243
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477964083214520447}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &5477964083214520444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,24 +267,3 @@ MonoBehaviour:
     maxNormalAngle: 0
   damage: 1
   pushForce: 0
---- !u!50 &-4873862130183663243
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5477964083214520447}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4

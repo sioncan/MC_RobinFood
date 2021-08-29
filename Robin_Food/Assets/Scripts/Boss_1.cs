@@ -23,7 +23,7 @@ public class Boss_1 : Enemy
     // Update is called once per frame
     private void Update()
     {
-        if (isAlive)
+        if (isAlive && GameManager.isPaused == false)
         {
             if (Time.time - lastAttack < attackCooldown)
             {   // ogni cooldown spara i companions nelle 4 direzioni (N,S,E,W)

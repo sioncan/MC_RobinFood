@@ -6,15 +6,9 @@ public class RandomEnemySpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
-    public float spawnCooldown = 5f;
+    public float spawnCooldown = 10f;
     public float lastSpawn;
     private int randomEnemyToSpawn;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

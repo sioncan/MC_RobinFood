@@ -14,7 +14,7 @@ public class Enemy : Mover
     private Vector3 startingPosition;
     public ContactFilter2D filter;
     private CapsuleCollider2D hitbox;
-    private Collider2D[] hits = new Collider2D[10];
+    private Collider2D[] hits = new Collider2D[100];
 
     // Start is called before the first frame update
     protected override void Start()
@@ -29,43 +29,52 @@ public class Enemy : Mover
     // Update is called once per frame
     private void FixedUpdate()
     {
-        // controllo se il player è nella distanza di aggro
-        if(Vector3.Distance(playerTransform.position, startingPosition) < chaseLength)
+        if (GameManager.isPaused == false)
         {
-            if(Vector3.Distance(playerTransform.position, startingPosition) < triggerLength)
-                chasing = true;
-
-            if (chasing)
+            // controllo se il player è nella distanza di aggro
+            if (Vector3.Distance(playerTransform.position, startingPosition) < chaseLength)
             {
-                if (!collidingWithPlayer)
+                if (Vector3.Distance(playerTransform.position, startingPosition) < triggerLength)
+                    chasing = true;
+
+                if (chasing)
                 {
-                    UpdateMotor((playerTransform.position - transform.position).normalized);
+                    if (!collidingWithPlayer)
+                    {
+                        UpdateMotor((playerTransform.position - transform.position).normalized);
+                    }
+                    else
+                    {
+                        UpdateMotor(Vector3.zero);
+                    }
                 }
-            } else
-            {   // se il player non è più nel range di aggro, l'npc torna al punto di spawn
-                UpdateMotor(startingPosition - transform.position); 
+                else
+                {   // se il player non è più nel range di aggro, l'npc torna al punto di spawn
+                    UpdateMotor(startingPosition - transform.position);
+                }
             }
-        } else
-        {
-            UpdateMotor(startingPosition - transform.position);
-            chasing = false;
-        }
-        // controlla overlaps
-        collidingWithPlayer = false;
-        // rilevo collisioni
-        boxCollider.OverlapCollider(filter, hits);
-        // itero le collisioni rilevate, applico l'azione in base alla collisione e pulisco l'array delle collisioni
-        for (int i = 0; i < hits.Length; i++)
-        {
-            if (hits[i] == null)
-                continue;
-
-            if (hits[i].tag == "Player" && hits[i].name == "Player")
+            else
             {
-                collidingWithPlayer = true;
+                UpdateMotor(startingPosition - transform.position);
+                chasing = false;
             }
+            // controlla overlaps
+            collidingWithPlayer = false;
+            // rilevo collisioni
+            boxCollider.OverlapCollider(filter, hits);
+            // itero le collisioni rilevate, applico l'azione in base alla collisione e pulisco l'array delle collisioni
+            for (int i = 0; i < hits.Length; i++)
+            {
+                if (hits[i] == null)
+                    continue;
 
-            hits[i] = null;
+                if (hits[i].tag == "Player" || hits[i].tag == "Fighter")
+                {
+                    collidingWithPlayer = true;
+                }
+
+                hits[i] = null;
+            }
         }
     }
 

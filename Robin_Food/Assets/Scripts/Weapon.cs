@@ -5,8 +5,8 @@ using UnityEngine;
 public class Weapon : Collidable
 {
     // damage struct
-    public int[] damagePoint = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,15};
-    public float[] pushForce = { 2.0f, 2.2f, 2.4f, 2.6f, 2.8f, 3.0f, 3.2f, 3.4f, 3.6f, 3.8f, 4.0f};
+    public int[] damagePoint = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15 };
+    public float[] pushForce = { 2.0f, 2.2f, 2.4f, 2.6f, 2.8f, 3.0f, 3.2f, 3.4f, 3.6f, 3.8f, 4.0f };
     // swing
     private Animator animator;
     private float cooldown = 0.5f;
@@ -33,15 +33,25 @@ public class Weapon : Collidable
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetButtonDown("AttackButton"))
+        //{
+        //    if (Time.time - lastSwing > cooldown)
+        //    {
+        //        lastSwing = Time.time;
+        //        Swing();
+        //    }
+        //}
+    }
+
+    public void Attack()
+    {
+        if (Time.time - lastSwing > cooldown)
         {
-            if(Time.time - lastSwing > cooldown)
-            {
-                lastSwing = Time.time;
-                Swing();
-            }
+            lastSwing = Time.time;
+            Swing();
         }
     }
+
     // metodo chiamato quando si attacca, attiviamo il trigger dell'animator/animation
     private void Swing()
     {

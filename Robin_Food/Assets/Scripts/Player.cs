@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : Mover
 {
+    private CharacterController controller;
+
     private bool isAlive = true;
     private SpriteRenderer spriteRenderer;
 
@@ -11,6 +14,7 @@ public class Player : Mover
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        controller = GetComponent<CharacterController>();
     }
 
     protected override void ReceiveDamage(Damage dmg)
@@ -28,11 +32,12 @@ public class Player : Mover
 
     private void FixedUpdate()
     {
-        // Prendo gli input WASD e li metto nel vettore moveDelta
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-        if(isAlive)
-            UpdateMotor(new Vector3(x, y, 0));  
+        // L'input per muoversi simula il joystick sinistro di un gamepad
+        // passo i valori del joystick al motore
+        var gamepad = Gamepad.current;
+        if (gamepad == null)
+            return; // No gamepad connected.
+        UpdateMotor(gamepad.leftStick.ReadValue());  
     }
 
     public void SwapSprite(int skindId)

@@ -10,6 +10,7 @@ public class Player : Mover
 
     private bool isAlive = true;
     private SpriteRenderer spriteRenderer;
+    public RuntimeAnimatorController[] controllers;
 
     protected override void Start()
     {
@@ -41,9 +42,11 @@ public class Player : Mover
         UpdateMotor(gamepad.leftStick.ReadValue());  
     }
 
-    public void SwapSprite(int skindId)
+    // Al cambiare della skin/sprite, cambio anche l'animator controller (ce ne è uno per ogni skin)
+    public void SwapSprite(int skinId)
     {
-        spriteRenderer.sprite = GameManager.gameManagerIstance.playerSprites[skindId];
+        animator.runtimeAnimatorController = controllers[skinId];
+        spriteRenderer.sprite = GameManager.gameManagerIstance.playerSprites[skinId];
     }
 
     public void OnLevelUp()

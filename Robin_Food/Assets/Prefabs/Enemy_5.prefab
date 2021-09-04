@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 9078832026780708334}
   - component: {fileID: 8206482321241366168}
   - component: {fileID: 9078832026780708335}
+  - component: {fileID: -1965682734066997762}
   m_Layer: 0
   m_Name: Enemy_5
   m_TagString: Fighter
@@ -214,6 +215,7 @@ MonoBehaviour:
   hitpoint: 10
   maxHitpoint: 10
   pushRecoverySpeed: 0.1
+  pushDirection: {x: 0, y: 0, z: 0}
   xspeed: 0.75
   yspeed: 0.75
   isAlive: 0
@@ -234,3 +236,22 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+--- !u!95 &-1965682734066997762
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9078832026780708328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9599de8f394c39d478249e6f107c4630, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

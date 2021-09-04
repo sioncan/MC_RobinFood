@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: -4873862130183663243}
   - component: {fileID: 5477964083214520444}
   - component: {fileID: 5477964083214520440}
+  - component: {fileID: 4702280535473040963}
   m_Layer: 0
   m_Name: Boss_2
   m_TagString: Fighter
@@ -268,3 +269,22 @@ MonoBehaviour:
     maxNormalAngle: 0
   damage: 3
   pushForce: 0
+--- !u!95 &4702280535473040963
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477964083214520447}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 98f5dfd2bec738e49897d70bc7e31cea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

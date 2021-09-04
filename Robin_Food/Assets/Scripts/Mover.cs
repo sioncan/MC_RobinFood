@@ -8,7 +8,7 @@ public abstract class Mover : Fighter
     protected Vector3 moveDelta;
     protected RaycastHit2D hit;
     public float xspeed = 1.0f;
-    public float yspeed = 0.75f;
+    public float yspeed = 1.0f;
     protected Vector3 originalSize;
 
     // Start is called before the first frame update

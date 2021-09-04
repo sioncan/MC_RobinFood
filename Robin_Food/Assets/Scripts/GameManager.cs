@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using GooglePlayGames.BasicApi;
+using GooglePlayGames;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManagerIstance;
     public static bool isPaused;
+
+    // account google
+    public Button signIn;
+    public Text signInMessage;
 
     // resources
     public List<Sprite> playerSprites;
@@ -23,10 +30,46 @@ public class GameManager : MonoBehaviour
     public GameObject hud;
     public GameObject menu;
     public Animator deathMenuAnim;
+    public GameObject attackButton;
 
     // logic
     public int coins;
     public int experience;
+
+    // google account
+    private void Start()
+    {   // setup iniziale google account
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
+            .RequestIdToken()
+            .RequestServerAuthCode(false)
+            .Build();
+        PlayGamesPlatform.InitializeInstance(config);
+        PlayGamesPlatform.DebugLogEnabled = true;
+        PlayGamesPlatform.Activate();
+
+        signIn.onClick.RemoveAllListeners();
+        signIn.onClick.AddListener(SignInGooglePlayGames);
+
+        SignInGooglePlayGames();
+    }
+
+    // google account
+    private void SignInGooglePlayGames()
+    {
+        PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptAlways, (result) =>
+        {
+            signInMessage.text = result.ToString();
+            signIn.onClick.AddListener(SignoutGooglePlay);
+        });
+    }
+
+    // google account
+    private void SignoutGooglePlay()
+    {
+        PlayGamesPlatform.Instance.SignOut();
+        signInMessage.text = "Sign Out";
+        SignInGooglePlayGames();
+    }
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
@@ -42,6 +85,7 @@ public class GameManager : MonoBehaviour
             Destroy(floatingTextManager.gameObject);
             Destroy(hud);
             Destroy(menu);
+            Destroy(attackButton);
             return;
         }
         gameManagerIstance = this;

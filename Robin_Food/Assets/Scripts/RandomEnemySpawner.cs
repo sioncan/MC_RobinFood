@@ -6,7 +6,7 @@ public class RandomEnemySpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
-    public float spawnCooldown = 10f;
+    public float spawnCooldown = 15.0f;
     public float lastSpawn;
     private int randomEnemyToSpawn;
 

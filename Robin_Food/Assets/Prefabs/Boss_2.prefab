@@ -212,14 +212,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5fbbb04303dba4f9c8ca979437e6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 10
-  maxHitpoint: 10
+  hitpoint: 50
+  maxHitpoint: 50
   pushRecoverySpeed: 0.1
-  xspeed: 1
+  pushDirection: {x: 0, y: 0, z: 0}
+  xspeed: 0.75
   yspeed: 0.75
-  isAlive: 0
-  xpValue: 1
-  triggerLength: 1.5
+  isAlive: 1
+  xpValue: 50
+  triggerLength: 1000
   chaseLength: 1000
   filter:
     useTriggers: 0
@@ -265,5 +266,5 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 1
+  damage: 3
   pushForce: 0

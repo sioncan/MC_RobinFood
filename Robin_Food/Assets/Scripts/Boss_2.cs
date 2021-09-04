@@ -7,8 +7,9 @@ public class Boss_2 : Enemy
     public GameObject duplicatePrefab;
     private int duplicateNum;
     public int duplicateMaxNum = 3;
-    public float duplicateCooldown = 10.0f;
+    public float duplicateCooldown = 15.0f;
     public float lastDuplicate;
+    private int coinsAmount = 100;
 
     // Update is called once per frame
     private void Update()
@@ -20,6 +21,11 @@ public class Boss_2 : Enemy
             lastDuplicate = Time.time;
             duplicateNum++;
         }
+    }
+    protected override void Death()
+    {
+        base.Death();
+        GameManager.gameManagerIstance.coins += coinsAmount;
     }
 }
 

@@ -139,8 +139,10 @@ MonoBehaviour:
   hitpoint: 10
   maxHitpoint: 10
   pushRecoverySpeed: 0.1
+  pushDirection: {x: 0, y: 0, z: 0}
   xspeed: 1
-  yspeed: 0.75
+  yspeed: 1
+  leftJoystick: {fileID: 0}
 --- !u!114 &705245873422026430
 MonoBehaviour:
   m_ObjectHideFlags: 0

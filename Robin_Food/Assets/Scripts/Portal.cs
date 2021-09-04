@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Portal : Collidable
 {
+    public Player player;
     protected override void OnCollide(Collider2D coll)
     {
         if (coll.name == "Player") 

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Player : Mover
 {
     private CharacterController controller;
+    public Transform leftJoystick;
 
     private bool isAlive = true;
     private SpriteRenderer spriteRenderer;
@@ -47,7 +48,7 @@ public class Player : Mover
 
     public void OnLevelUp()
     {
-        maxHitpoint++;
+        maxHitpoint += 5;
         hitpoint = maxHitpoint;
     }
 
@@ -66,7 +67,7 @@ public class Player : Mover
         hitpoint += healingAmount;
         if(hitpoint > maxHitpoint)
             hitpoint = maxHitpoint;
-        GameManager.gameManagerIstance.ShowText("+ " + healingAmount.ToString() + "hp", 20, Color.green, transform.position, Vector3.up * 30, 1.0f);
+        GameManager.gameManagerIstance.ShowText("+ " + healingAmount.ToString() + "hp", 25, Color.green, transform.position, Vector3.up * 30, 1.0f);
         GameManager.gameManagerIstance.OnHitpointChange();
     }
 

@@ -9,7 +9,7 @@ public class Fighter : MonoBehaviour
     public float pushRecoverySpeed = 0.1f;
     protected float immuneTime = 1.0f;
     protected float lastImmune;
-    protected Vector3 pushDirection;
+    public Vector3 pushDirection;
 
     protected virtual void ReceiveDamage(Damage dmg)
     {

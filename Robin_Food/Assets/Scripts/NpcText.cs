@@ -14,7 +14,7 @@ public class NpcText : Collidable
         if (Time.time - lastSpeak > cooldown)
         {
             lastSpeak = Time.time;
-            GameManager.gameManagerIstance.ShowText(msg, 15, Color.white, transform.position + textUp, Vector3.zero, 5.0f);
+            GameManager.gameManagerIstance.ShowText(msg, 25, Color.white, transform.position + textUp, Vector3.zero, 5.0f);
         }
     }
 }

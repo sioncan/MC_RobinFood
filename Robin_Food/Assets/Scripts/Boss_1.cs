@@ -10,6 +10,7 @@ public class Boss_1 : Enemy
     public float compSpeed = 0.5f;
     public float attackCooldown = 3.0f;
     public float lastAttack;
+    private int coinsAmount = 100;
 
     public void Awake()
     {   // genero i companions e li metto intorno al boss come punto di partenza
@@ -55,6 +56,7 @@ public class Boss_1 : Enemy
         {
             Destroy(companions[i]);
             GameObject.Find("Player").transform.Translate(Vector3.zero);
+            GameManager.gameManagerIstance.coins += coinsAmount;
         }
     }
 }

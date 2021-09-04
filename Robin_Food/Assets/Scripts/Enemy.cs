@@ -6,6 +6,7 @@ public class Enemy : Mover
 {
     public bool isAlive;
     public int xpValue = 1;
+    private int coinsAmount = 1;
     public float triggerLength = 0.3f;
     public float chaseLength = 1.0f;
     private bool chasing;
@@ -83,5 +84,6 @@ public class Enemy : Mover
         isAlive = false;
         Destroy(gameObject);
         GameManager.gameManagerIstance.GrantXp(xpValue);
+        GameManager.gameManagerIstance.coins += coinsAmount;
     }
 }

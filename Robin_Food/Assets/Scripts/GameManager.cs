@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject menu;
     public Animator deathMenuAnim;
     public GameObject attackButton;
+    public GameObject music;
 
     // logic
     public int coins;
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
             Destroy(hud);
             Destroy(menu);
             Destroy(attackButton);
+            Destroy(music);
             return;
         }
         gameManagerIstance = this;

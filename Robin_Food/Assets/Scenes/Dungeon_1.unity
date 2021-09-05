@@ -25408,7 +25408,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1252269008
 Transform:
   m_ObjectHideFlags: 0
@@ -56094,7 +56094,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6499179899816388326, guid: 03832400b8852ee4d9e37b39730ff1bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 03832400b8852ee4d9e37b39730ff1bf, type: 3}
 --- !u!4 &5477964081521090767 stripped
 Transform:
@@ -56146,3 +56147,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5477964081521090771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477964081521090768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5fbbb04303dba4f9c8ca979437e6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoint: 100
+  maxHitpoint: 100
+  pushRecoverySpeed: 0.1
+  pushDirection: {x: 0, y: 0, z: 0}
+  xspeed: 0.75
+  yspeed: 0.75
+  isAlive: 0
+  xpValue: 100
+  triggerLength: 1.5
+  chaseLength: 1000
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  duplicatePrefab: {fileID: 5477964083214520447, guid: 03832400b8852ee4d9e37b39730ff1bf, type: 3}
+  duplicateMaxNum: 3
+  duplicateCooldown: 15
+  lastDuplicate: 0

@@ -10153,7 +10153,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &706249867
 RectTransform:
@@ -22057,8 +22057,8 @@ MonoBehaviour:
   - {fileID: 4873919324978898756, guid: 6d68d562aba69de4cbcb241db49f5133, type: 3}
   - {fileID: -6190716609726613716, guid: 6d68d562aba69de4cbcb241db49f5133, type: 3}
   - {fileID: 1839998147110866507, guid: 6d68d562aba69de4cbcb241db49f5133, type: 3}
-  weaponPrices: 19000000320000004b000000640000007d00000096000000af000000c80000002c010000f4010000
-  xpTable: 320000006400000096000000c8000000fa0000002c0100005e01000090010000c2010000f4010000
+  weaponPrices: 050000000a0000000f0000001400000019000000320000004b00000064000000c80000002c010000
+  xpTable: 050000000a0000000f0000001400000019000000320000004b00000064000000c80000002c010000
   player: {fileID: 1831801712}
   weapon: {fileID: 1337340248}
   floatingTextManager: {fileID: 1317801958}
@@ -22067,6 +22067,7 @@ MonoBehaviour:
   menu: {fileID: 2142137572}
   deathMenuAnim: {fileID: 1312307574}
   attackButton: {fileID: 438330538}
+  music: {fileID: 361864897}
   coins: 0
   experience: 0
 --- !u!4 &1256568636

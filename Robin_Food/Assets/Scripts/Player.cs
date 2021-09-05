@@ -51,7 +51,7 @@ public class Player : Mover
 
     public void OnLevelUp()
     {
-        maxHitpoint += 5;
+        maxHitpoint += 10;
         hitpoint = maxHitpoint;
     }
 

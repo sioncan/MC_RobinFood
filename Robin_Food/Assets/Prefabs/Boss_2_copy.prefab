@@ -88,11 +88,10 @@ GameObject:
   - component: {fileID: 5477964083214520442}
   - component: {fileID: 5477964083214520445}
   - component: {fileID: -4873862130183663243}
-  - component: {fileID: 5477964083214520444}
-  - component: {fileID: 5477964083214520440}
   - component: {fileID: 4702280535473040963}
+  - component: {fileID: 6499179899816388326}
   m_Layer: 0
-  m_Name: Boss_2
+  m_Name: Boss_2_copy
   m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,74 +200,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &5477964083214520444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5477964083214520447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e5fbbb04303dba4f9c8ca979437e6bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitpoint: 50
-  maxHitpoint: 50
-  pushRecoverySpeed: 0.1
-  pushDirection: {x: 0, y: 0, z: 0}
-  xspeed: 0.75
-  yspeed: 0.75
-  isAlive: 1
-  xpValue: 50
-  triggerLength: 1000
-  chaseLength: 1000
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  duplicatePrefab: {fileID: 0}
-  duplicateMaxNum: 0
-  duplicateCooldown: 5
-  lastDuplicate: 0
---- !u!114 &5477964083214520440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5477964083214520447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91851fd9c5d6b62468bc90eaa4890273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  damage: 3
-  pushForce: 0
 --- !u!95 &4702280535473040963
 Animator:
   serializedVersion: 3
@@ -288,3 +219,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6499179899816388326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477964083214520447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c74f7debb27aa1459b66ee25b743ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoint: 50
+  maxHitpoint: 50
+  pushRecoverySpeed: 0.1
+  pushDirection: {x: 0, y: 0, z: 0}
+  xspeed: 0.75
+  yspeed: 0.75
+  isAlive: 0
+  xpValue: 1
+  triggerLength: 1000
+  chaseLength: 1000
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0

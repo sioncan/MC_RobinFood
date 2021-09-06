@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     public GameObject hud;
     public GameObject menu;
     public Animator deathMenuAnim;
+    public Animator joystickAnim;
+    public Animator attButtonAnim;
     public GameObject attackButton;
     public GameObject music;
 
@@ -164,14 +166,6 @@ public class GameManager : MonoBehaviour
         hitpointBar.localScale = new Vector3(ratio, 1, 1);
     }
 
-    // Death menu respawn
-    public void Respawn()
-    {
-        deathMenuAnim.SetTrigger("Hide");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
-        player.Respawn();
-    }
-
     // salva lo stato del gioco
     /*
      * 0 int playerSkin
@@ -219,5 +213,18 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         isPaused = false;
+    }
+
+    // azzera tutti i dati
+    public void ResetGame()
+    {
+        SceneManager.LoadScene("Main");
+        deathMenuAnim.SetTrigger("Hide");
+        player.SetLevel(1);
+        player.Respawn();
+        this.coins = 0;
+        this.experience = 0;
+        player.SwapSprite(3);
+        player.GetComponentInChildren<Weapon>().SetWeaponLevel(0);
     }
 }

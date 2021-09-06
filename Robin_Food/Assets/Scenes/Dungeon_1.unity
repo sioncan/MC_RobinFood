@@ -25408,7 +25408,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1252269008
 Transform:
   m_ObjectHideFlags: 0
@@ -25635,8 +25635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233e4d64c5c629c4b841819ea744dbf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 100
-  maxHitpoint: 100
+  hitpoint: 200
+  maxHitpoint: 200
   pushRecoverySpeed: 0.1
   pushDirection: {x: 0, y: 0, z: 0}
   xspeed: 0.75
@@ -55809,8 +55809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492eed9edc9b6b543a3a0934310f8d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 100
-  maxHitpoint: 100
+  hitpoint: 200
+  maxHitpoint: 200
   pushRecoverySpeed: 0.1
   pushDirection: {x: 0, y: 0, z: 0}
   xspeed: 0.75
@@ -56159,8 +56159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5fbbb04303dba4f9c8ca979437e6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 100
-  maxHitpoint: 100
+  hitpoint: 200
+  maxHitpoint: 200
   pushRecoverySpeed: 0.1
   pushDirection: {x: 0, y: 0, z: 0}
   xspeed: 0.75

@@ -28,6 +28,7 @@ public class Player : Mover
     }
     protected override void Death()
     {
+        GameManager.gameManagerIstance.PauseGame();
         isAlive = false;
         GameManager.gameManagerIstance.deathMenuAnim.SetTrigger("Show");
     }

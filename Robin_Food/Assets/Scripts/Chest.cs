@@ -17,7 +17,7 @@ public class Chest : Collectable
             base.OnCollect();
             GetComponent<SpriteRenderer>().sprite = EmptyChest;
             GameManager.gameManagerIstance.coins += coinsAmount;
-            GameManager.gameManagerIstance.ShowText("+" + coinsAmount + " coins!", 30, Color.yellow, transform.position, Vector3.up * 25, 1.5f);
+            GameManager.gameManagerIstance.ShowText("+" + coinsAmount + " coins!", 30, Color.yellow, transform.position, Vector3.up * 25, 2f);
         }
     }
 }

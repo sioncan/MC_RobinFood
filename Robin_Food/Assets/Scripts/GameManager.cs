@@ -194,12 +194,14 @@ public class GameManager : MonoBehaviour
             return;
 
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
-        player.hitpoint = int.Parse(data[0]);
+        if(player.hitpoint < player.maxHitpoint)
+            player.hitpoint = int.Parse(data[0]);
         coins = int.Parse(data[1]);
         experience = int.Parse(data[2]);
         if(GetCurrentLevel() != 1)
             player.SetLevel(GetCurrentLevel());
-        weapon.SetWeaponLevel(int.Parse(data[3]));
+        if(weapon.weaponLevel != 0)
+            weapon.SetWeaponLevel(int.Parse(data[3]));
     }    
 
     public void OnSceneLoaded(Scene s, LoadSceneMode mode)
@@ -224,6 +226,7 @@ public class GameManager : MonoBehaviour
         deathMenuAnim.SetTrigger("Hide");
         player.SetLevel(1);
         player.Respawn();
+        player.maxHitpoint = startingHitpoint;
         player.hitpoint = startingHitpoint;
         this.coins = 0;
         this.experience = 0;

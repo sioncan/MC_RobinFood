@@ -68,7 +68,7 @@ public class PlayerMenu : MonoBehaviour
         int currentLevel = GameManager.gameManagerIstance.GetCurrentLevel();
         if (currentLevel == GameManager.gameManagerIstance.xpTable.Count) // se sono max level
         {
-            xpText.text = " max level"; // mostra xp tot
+            xpText.text = "Max level !"; // mostra xp tot
             xpBar.localScale = Vector3.one; // riempie tutta la barra dell'xp
         }
         else

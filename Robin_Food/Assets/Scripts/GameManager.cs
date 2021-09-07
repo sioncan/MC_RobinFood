@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     // logic
     public int coins;
     public int experience;
+    public int startingHitpoint = 100;
 
     // google account
     private void Start()
@@ -168,7 +169,7 @@ public class GameManager : MonoBehaviour
 
     // salva lo stato del gioco
     /*
-     * 0 int playerSkin
+     * 0 int hitpoint
      * 1 int money
      * 2 int experience
      * 3 int weaponLevel
@@ -176,7 +177,7 @@ public class GameManager : MonoBehaviour
     public void SaveState()
     {
         string saving = "";
-        saving += "0" + "|";
+        saving += player.hitpoint.ToString() + "|";
         saving += coins.ToString() + "|";
         saving += experience.ToString() + "|";
         saving += weapon.weaponLevel.ToString();
@@ -193,6 +194,7 @@ public class GameManager : MonoBehaviour
             return;
 
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
+        player.hitpoint = int.Parse(data[0]);
         coins = int.Parse(data[1]);
         experience = int.Parse(data[2]);
         if(GetCurrentLevel() != 1)
@@ -222,6 +224,7 @@ public class GameManager : MonoBehaviour
         deathMenuAnim.SetTrigger("Hide");
         player.SetLevel(1);
         player.Respawn();
+        player.hitpoint = startingHitpoint;
         this.coins = 0;
         this.experience = 0;
         player.SwapSprite(3);

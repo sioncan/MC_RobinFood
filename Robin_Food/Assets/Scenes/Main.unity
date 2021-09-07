@@ -22096,6 +22096,7 @@ MonoBehaviour:
   music: {fileID: 361864897}
   coins: 0
   experience: 0
+  startingHitpoint: 0
 --- !u!4 &1256568636
 Transform:
   m_ObjectHideFlags: 0
@@ -31243,7 +31244,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1944440944
 RectTransform:
@@ -39167,6 +39168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 4096051972413769588, guid: faf9ab4de928bc341b467156cecfbe49, type: 3}
+      propertyPath: coinsAmount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4096051972413769591, guid: faf9ab4de928bc341b467156cecfbe49, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -39575,24 +39580,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &7998969367626145776
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7998969367626145774}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 0.29
-  m_Radius: 0.1
-  m_SlopeLimit: 45
-  m_StepOffset: 0.2
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.024, z: 0}
 --- !u!1001 &8886961116084842580
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -148,5 +148,5 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 5
+  damage: 10
   pushForce: 0

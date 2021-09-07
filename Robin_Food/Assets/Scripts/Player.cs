@@ -54,6 +54,7 @@ public class Player : Mover
     {
         maxHitpoint += 10;
         hitpoint = maxHitpoint;
+        GameManager.gameManagerIstance.ShowText("Level up !", 30, Color.red, transform.position, Vector3.up * 30, 1.0f);
     }
 
     public void SetLevel(int level)
@@ -71,7 +72,7 @@ public class Player : Mover
         hitpoint += healingAmount;
         if(hitpoint > maxHitpoint)
             hitpoint = maxHitpoint;
-        GameManager.gameManagerIstance.ShowText("+ " + healingAmount.ToString() + "hp", 25, Color.green, transform.position, Vector3.up * 30, 1.0f);
+        GameManager.gameManagerIstance.ShowText("+ " + healingAmount.ToString() + "hp", 30, Color.green, transform.position, Vector3.up * 30, 1.0f);
         GameManager.gameManagerIstance.OnHitpointChange();
     }
 

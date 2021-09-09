@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     // logic
     public int coins;
     public int experience;
-    public int startingHitpoint = 100;
+    private int startingHitpoint = 100;
 
     // google account
     private void Start()
@@ -224,7 +224,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
         deathMenuAnim.SetTrigger("Hide");
-        player.SetLevel(1);
         player.Respawn();
         player.maxHitpoint = startingHitpoint;
         player.hitpoint = startingHitpoint;

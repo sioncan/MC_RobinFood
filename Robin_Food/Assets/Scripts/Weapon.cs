@@ -15,6 +15,8 @@ public class Weapon : Collidable
     public int weaponLevel;
     private SpriteRenderer spriteRenderer;
 
+    public Animator attackEffect;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -72,7 +74,7 @@ public class Weapon : Collidable
                 origin = transform.position,
                 pushForce = pushForce[weaponLevel]
             };
-
+            coll.gameObject.GetComponent<Enemy>().hitEffect.SetTrigger("show");
             coll.SendMessage("ReceiveDamage", dmg);
         }
     }

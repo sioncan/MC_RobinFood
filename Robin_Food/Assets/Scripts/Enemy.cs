@@ -16,6 +16,7 @@ public class Enemy : Mover
     public ContactFilter2D filter;
     private CapsuleCollider2D hitbox;
     private Collider2D[] hits = new Collider2D[100];
+    public Animator hitEffect;
 
     // Start is called before the first frame update
     protected override void Start()

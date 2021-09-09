@@ -25445,16 +25445,16 @@ MonoBehaviour:
   - {fileID: 730549935}
   - {fileID: 23325370}
   enemyPrefabs:
-  - {fileID: 2083583629084649561, guid: 3572a2ea3802d5e41badc5934051e877, type: 3}
-  - {fileID: 7743670842011817480, guid: fc93e07de18d7434892e594be3f0304e, type: 3}
-  - {fileID: 8696119249073679363, guid: eb11027f8337153499223851f01e61f6, type: 3}
-  - {fileID: 263458100294684902, guid: b59eeae9843c8814c926cc4d79c28de5, type: 3}
-  - {fileID: 5479162382238425408, guid: fe5e6e57b8e3f904abff30c0cbba9e79, type: 3}
-  - {fileID: 9078832026780708328, guid: 6a671f3c0efa4c9498dafba4a7bdd85a, type: 3}
-  - {fileID: 6847519530790070103, guid: 74b47f7281413164c99ed4ea9e03dc4e, type: 3}
-  - {fileID: 8685841770511778192, guid: 27cb94a0c0b4eba40a7ede0ffb935f03, type: 3}
-  - {fileID: 761691051097526320, guid: 1b072b78b3b656c4abf502e560c46f62, type: 3}
-  - {fileID: 4289672754757551014, guid: c88ef32b6cc839b438f7b12d69c0be5b, type: 3}
+  - {fileID: 4701255514753653824, guid: 3572a2ea3802d5e41badc5934051e877, type: 3}
+  - {fileID: 1661468117952035364, guid: fc93e07de18d7434892e594be3f0304e, type: 3}
+  - {fileID: 621883307186422564, guid: eb11027f8337153499223851f01e61f6, type: 3}
+  - {fileID: 4208285823361711275, guid: b59eeae9843c8814c926cc4d79c28de5, type: 3}
+  - {fileID: 1353924040868672703, guid: fe5e6e57b8e3f904abff30c0cbba9e79, type: 3}
+  - {fileID: 2045484488707443894, guid: 6a671f3c0efa4c9498dafba4a7bdd85a, type: 3}
+  - {fileID: 3342113614322370865, guid: 74b47f7281413164c99ed4ea9e03dc4e, type: 3}
+  - {fileID: 467420655714409794, guid: 27cb94a0c0b4eba40a7ede0ffb935f03, type: 3}
+  - {fileID: 148602104488353431, guid: 1b072b78b3b656c4abf502e560c46f62, type: 3}
+  - {fileID: 1015249476276841580, guid: c88ef32b6cc839b438f7b12d69c0be5b, type: 3}
   spawnCooldown: 10
   lastSpawn: 0
 --- !u!1 &1270481418
@@ -25659,6 +25659,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  hitEffect: {fileID: 0}
   companions:
   - {fileID: 84148036}
   - {fileID: 1687699552}
@@ -55830,6 +55831,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  hitEffect: {fileID: 0}
   companionPrefab: {fileID: 6836328392464551224, guid: 807fc3d6a9caf0a43b772eed782decee, type: 3}
   compSpeed: 0.5
   attackCooldown: 3
@@ -56184,6 +56186,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  hitEffect: {fileID: 0}
   duplicatePrefab: {fileID: 5477964083214520447, guid: 03832400b8852ee4d9e37b39730ff1bf, type: 3}
   duplicateMaxNum: 3
   duplicateCooldown: 15

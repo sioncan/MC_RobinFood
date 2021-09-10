@@ -24,7 +24,7 @@ public class Boss_1 : Enemy
     // Update is called once per frame
     private void Update()
     {
-        if (isAlive && GameManager.isPaused == false)
+        if (isAlive && GameManager.isPaused == false && chasing)
         {
             if (Time.time - lastAttack < attackCooldown)
             {   // ogni cooldown spara i companions nelle 4 direzioni (N,S,E,W)
@@ -45,6 +45,7 @@ public class Boss_1 : Enemy
                 companions[3] = Instantiate(companionPrefab, new Vector3(transform.position.x, transform.position.y - 0.1f, 0), Quaternion.identity);
                 GameObject.Find("Player").transform.Translate(Vector3.zero);
                 lastAttack = Time.time;
+                GetComponent<AudioSource>().Play();
             }
         }
     }

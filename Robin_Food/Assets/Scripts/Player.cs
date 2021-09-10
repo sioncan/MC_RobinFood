@@ -31,6 +31,7 @@ public class Player : Mover
         GameManager.gameManagerIstance.PauseGame();
         isAlive = false;
         GameManager.gameManagerIstance.deathMenuAnim.SetTrigger("Show");
+        GetComponent<AudioSource>().Play();
     }
 
     private void FixedUpdate()

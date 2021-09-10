@@ -20,6 +20,7 @@ public class Boss_2 : Enemy
             Instantiate(duplicatePrefab, new Vector3(transform.position.x + 0.5f, transform.position.y, 0), Quaternion.identity);
             lastDuplicate = Time.time;
             duplicateNum++;
+            GetComponent<AudioSource>().Play();
         }
     }
     protected override void Death()

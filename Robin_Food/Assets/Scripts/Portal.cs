@@ -14,6 +14,7 @@ public class Portal : Collidable
             GameManager.gameManagerIstance.SaveState();
             // Se collide con il Player, lo teleportiamo nel Dungeon
             SceneManager.LoadScene("Dungeon_1");
+            GetComponent<AudioSource>().Play();
         }
     }
 }

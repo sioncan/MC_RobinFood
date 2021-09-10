@@ -9,7 +9,7 @@ public class Enemy : Mover
     private int coinsAmount = 1;
     public float triggerLength = 0.3f;
     public float chaseLength = 1.0f;
-    private bool chasing;
+    protected bool chasing;
     private bool collidingWithPlayer;
     private Transform playerTransform;
     private Vector3 startingPosition;
@@ -17,6 +17,7 @@ public class Enemy : Mover
     private CapsuleCollider2D hitbox;
     private Collider2D[] hits = new Collider2D[100];
     public Animator hitEffect;
+    public AudioSource deathSound;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -26,6 +27,7 @@ public class Enemy : Mover
         playerTransform = GameManager.gameManagerIstance.player.transform;
         startingPosition = transform.position;
         hitbox = transform.GetChild(0).GetComponent<CapsuleCollider2D>();
+        deathSound = GameObject.Find("DeathSound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -82,6 +84,7 @@ public class Enemy : Mover
 
     protected override void Death()
     {
+        deathSound.Play();
         isAlive = false;
         Destroy(gameObject);
         GameManager.gameManagerIstance.GrantXp(xpValue);

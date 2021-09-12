@@ -26342,7 +26342,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 1743708498}
   deathSound: {fileID: 0}
   companions:
   - {fileID: 84148036}
@@ -57057,7 +57057,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 1914311554}
   deathSound: {fileID: 0}
   companionPrefab: {fileID: 6836328392464551224, guid: 807fc3d6a9caf0a43b772eed782decee, type: 3}
   compSpeed: 0.5
